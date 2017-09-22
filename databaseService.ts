@@ -305,7 +305,9 @@ export default class DatabaseService {
                 });
             }
         ).then(
- 
+            () => this.CloseDB().then(
+                () => console.debug('db closed')
+            )
         ).catch((err)=>console.error(err));
     }
 }
